@@ -1,0 +1,31 @@
+[% # This is a TT comment. -%]
+[%- # Provide a title -%]
+[% META title = 'Users List' -%]
+[% # Note That the '-' at the beginning or end of TT code -%]
+[% # "chomps" the whitespace/newline at that end of the
+-%]
+[% # output (use View Source in browser to see the effect) -%]
+[% # Some basic HTML with a loop to display posts -%]
+<h1>All Posts</h1>
+[% FOREACH post IN posts -%]
+
+<h2>[% post.title %]</h2>
+<p>[% post.text.substr(0, 10) %] ...
+ <a href="[%
+        c.uri_for(c.controller.action_for('show'), [post.id]) %]">see More</a>
+
+</P>
+ <p>
+      [% # Add a link to delete a book %]
+      <a href="[%
+        c.uri_for(c.controller.action_for('delete'), [post.id]) %]">Delete</a>
+ </p>
+  <p>
+      [% # Add a link to Edit a book %]
+    <a href="[%
+        c.uri_for(c.controller.action_for('edit'), [post.id]) %]">edit</a>
+  </p>
+
+</tr>
+[% END -%]
+</table>

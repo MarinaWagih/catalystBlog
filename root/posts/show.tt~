@@ -1,0 +1,14 @@
+[% META title = 'show User' -%]
+[% # This is a TT comment. -%]
+[%- # Provide a title -%]
+[% META title = 'User' -%]
+[% # Note That the '-' at the beginning or end of TT code -%]
+[% # "chomps" the whitespace/newline at that end of the
+-%]
+[% # output (use View Source in browser to see the effect) -%]
+[% # Some basic HTML with a loop to display users -%]
+[% # Display each user in a table row %]
+<h1>Hello, [% user.first_name %] [% user.last_name %]</h1>
+<p>your UserName: [% user.username %]</p>
+<p>your E-mail: [% user.email %]</p>
+
